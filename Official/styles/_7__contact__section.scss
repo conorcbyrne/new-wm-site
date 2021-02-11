@@ -1,0 +1,65 @@
+.contact__section {
+    //min-height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/images/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .form__container{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.932);
+      padding: 1rem;
+      margin-bottom: 3rem;
+      border: 2px solid $teal;
+
+
+      h4{
+          padding: 1rem;
+          margin-bottom: 1rem;
+          color: $teal;
+          font-size: $header5;
+      }
+
+      input{
+          width: 100%;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          outline: none;
+          box-shadow:none;
+          border: 1px rgb(156, 156, 156) solid;
+          transition: all 200ms ease-in-out;
+
+          &:focus{
+            border: 2px solid $teal;
+          }
+      }
+      input::placeholder {
+        font-size: $header4;
+      }
+      textarea{
+          width: 100%;
+          padding: 1rem;
+          resize: vertical;
+          margin-bottom: 1rem;
+          outline: none;
+          border: 1px rgb(156, 156, 156) solid;
+          box-shadow:none;
+          transition: all 200ms ease-in-out;
+
+          &:focus{
+            border: 2px solid $teal;
+          }
+      }
+      textarea::placeholder {
+        font-size: $header4;
+      }
+      button{
+        color: white;
+        padding: 1rem;
+        font-size: $header5;
+      }
+  }
+  
