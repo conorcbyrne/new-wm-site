@@ -1,0 +1,180 @@
+.main__body {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/EP-notext.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page__logo {
+  width: 24rem;
+  margin: 3rem auto;
+
+  img {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    -webkit-filter: drop-shadow(3px 5px 5px rgba(255, 255, 255, 0.301));
+    filter: drop-shadow(3px 5px 5px rgba(255, 255, 255, 0.295));
+  }
+}
+.band__title {
+  color: white;
+  width: 95%;
+  margin: 1rem auto;
+  text-align: center;
+
+  h1 {
+    font-size: 3.8rem;
+    padding: 0.5rem;
+    font-family: WMfont;
+    letter-spacing: 4px;
+    font-weight: 800;
+    display: none;
+  }
+}
+.tile__container {
+  width: 90%;
+  margin: auto;
+}
+.tile {
+  background: $blue2;
+  width: 100%;
+ 
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid white;
+  justify-content: space-between;
+  border-radius: 1rem;
+
+  p {
+    font-size: 1.5rem;
+    color: white;
+    padding: 2.2rem 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  span {
+    padding: 1rem;
+    color: white;
+  }
+}
+.animated__tile{
+  background: linear-gradient(-90deg, $teal, $teal, #fdfdfd, $blue2, $blue2);
+	background-size: 400% 400%;
+  animation: gradient 10s ease-in-out infinite 1s;
+}
+
+
+
+.social-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 0.2rem;
+  width: 100%;
+  text-align: center;
+  grid-template-areas: "icon__fb icon_insta icon__yt icon__twitter";
+}
+//SOCIAL ICONS
+.fa {
+  font-size: 2.25rem;
+  padding: 1rem 0;
+}
+
+.icon__fb {
+  grid-area: icon__fb;
+  background: rgb(255, 255, 255);
+  //border-radius:2rem 2rem 2rem 0;
+  border-radius: 1rem;
+  border: 1px solid #3b5998;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.icon_insta {
+  grid-area: icon_insta;
+  background: rgb(255, 255, 255);
+  // border-radius:2rem 2rem 2rem 0;
+  border-radius: 1rem;
+  border: 1px solid #7047c7;
+}
+.fa-instagram {
+  color: #7047c7;
+}
+
+.icon__yt {
+  grid-area: icon__yt;
+  background: rgb(255, 255, 255);
+  // border-radius: 2rem 2rem 0 2rem;
+  border-radius: 1rem;
+  border: 1px solid #ff0000;
+}
+.fa-youtube-play {
+  color: #ff0000;
+}
+
+.icon__twitter {
+  grid-area: icon__twitter;
+  background: rgb(255, 255, 255);
+  //  border-radius: 2rem 2rem 0 2rem;
+  border-radius: 1rem;
+  border: 1px solid #1da1f2;
+}
+.fa-twitter {
+  color: #1da1f2;
+}
+
+//Queries
+
+@media only screen and (max-width: 320px) {
+  .page__logo {
+    width: 15rem;
+    margin: 1rem auto;
+  }
+  .tile__container {
+    width: 90%;
+  }
+  .tile {
+    margin-bottom: 0.5rem;
+
+    p {
+      font-size: 1.2rem;
+      padding: 1.6rem 2rem;
+    }
+  }
+  .fa {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .page__logo {
+    width: 32rem;
+    margin: 6rem auto;
+  }
+  .tile__container {
+    width: 70%;
+  }
+  .tile {
+    margin-bottom: 2rem;
+
+    p {
+      font-size: 1.8rem;
+      padding: 2.5rem 2rem;
+    }
+
+    span {
+      padding: 1rem;
+      color: white;
+    }
+  }
+  .fa {
+    font-size: 3rem;
+    padding: 1.5rem 0;
+  }
+}
