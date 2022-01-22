@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body,input,textarea {
+  font-family: "Raleway", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+h1,h2,h3,h4,h5,button,a{
+  text-transform: uppercase;
+}
+@font-face {
+  font-family: WMfont;
+  src: url('/OnedayFF/ONEDAY.ttf');
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+
+//SITE CONTAINER
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+//SECTION HEADERS
+.section__header{
+  min-height: 5vh;
+  text-align: center;
+
+  h2{
+    padding: 1.5rem 0;
+    font-size: $header1;
+    color: white;
+  }
+}
+//HEADER LINES
+.text__line {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+}
+.text__line:before,
+.text__line:after {
+  background-color: rgb(255, 255, 255);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 40%;
+}
+
+.text__line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.text__line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+//SOCIAL ICONS
+.fa {
+  font-size: 3rem;
+  color: white;
+}
+
+
+//BUTTONS
+.button1 {
+  background: none;
+  font-size: $header4;
+  padding: 0.5rem 2rem;
+  outline: none;
+  border: 2px solid white;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.button2{
+  background: $teal;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid white;
+  position: relative;
+  a {
+    font-size: $text1;
+    letter-spacing: 2px;
+    color: $white;
+  }
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-space {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
