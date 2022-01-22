@@ -1,0 +1,550 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+@font-face {
+  font-family: PoppinsLight;
+  src: url("/fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: PoppinsRegular;
+  src: url("/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: PoppinsMedium;
+  src: url("/fonts/Poppins-Medium.ttf");
+}
+
+body,
+* {
+  font-family: "PoppinsRegular";
+  overflow: hidden;
+}
+.container {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/bg1.jpg");
+
+  background-size: cover;
+  background-position: 70% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.container h1 {
+  font-size: 3.8rem;
+  user-select: none;
+}
+
+/*Music Button Section*/
+.music_button {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 2rem;
+  border-top: 5px double #ffffff;
+  border-bottom: 5px double #ffffff;
+  border-radius: 1rem;
+  border-color: white;
+  transition: all 0.4s ease;
+}
+.music_button a {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.music_button:hover {
+  border: 5px double #000000;
+  border-radius: 0rem;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  transform: scale(1.1);
+}
+
+/*Social Media Links Section*/
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  width: 50;
+  margin: 0 auto;
+  transition: all 0.4s ease;
+}
+.links {
+  fill: white;
+  width: 40px;
+  margin: 1rem 1.2rem;
+  transition: all 0.2s ease-in-out;
+}
+.links:hover {
+  transform: scale(1.1) translateY(4px);
+  stroke: rgba(0, 26, 255, 0.363);
+}
+
+/*Top Navigation Section*/
+.top_nav {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.top_nav a,
+div {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease-in-out;
+}
+.top_nav a,
+.top_nav div:hover {
+  transform: scale(1);
+}
+.nav_links:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav_links:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*About Us Section*/
+.about_us {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  height: 35vh;
+  width: 70%;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.about_show {
+  display: block;
+}
+.about_close {
+  text-align: end;
+  padding: 0.5rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.about_us h1 {
+  text-align: center;
+  user-select: none;
+}
+.about_us p {
+  text-align: center;
+  padding: 1rem;
+}
+
+
+
+/*WM LOGO*/
+.wm_logo{
+  position: fixed;
+  bottom: 2%;
+  left: -2%;
+  width: 18rem; 
+  height: 10rem;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(255, 255, 255, 0.295));
+}
+.wm_logo img{
+height: 100%;
+width: 100%;
+transition: all 0.7s ease;
+}
+.wm_logo img:hover {
+  transform: rotate3d(0, 1, 0.5, 360deg);
+  filter: drop-shadow(0px 0px 10px rgb(236, 236, 236));
+}
+
+
+
+/*Modal Pop Up*/
+.pop_up_screen {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+}
+.modal {
+  background: rgb(255, 255, 255);
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.4rem;
+}
+.modal_bg {
+  background-image: url("/img/fall-on\ art.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  filter: blur(1rem);
+  -webkit-filter: blur(1rem);
+}
+.modal_content {
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  display: grid; 
+  grid-template-columns: 0.6fr 1.8fr 0.6fr; 
+  grid-template-rows: 0.2fr 0.2fr 3fr 0.5fr 0.5fr 0.8fr; 
+  gap: 1.6rem 0; 
+  grid-template-areas: 
+    "close_modal close_modal close_modal"
+    "fall_on_text fall_on_text fall_on_text"
+    ". fall_on_player ."
+    "fall_on_title fall_on_title fall_on_title"
+    "fall_on_links fall_on_links fall_on_links"
+    ". . ."; 
+}
+
+.close_modal {
+  grid-area: close_modal;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.363);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+.close_modal button {
+  background-color: transparent;
+  text-decoration:none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.close_modal:hover {
+  background-color: rgba(0, 0, 0, 0.301);
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.close_modal:hover > button {
+  color: #ffffff;
+}
+.fall_on_text{
+  grid-area: fall_on_text;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.fall_on_player {
+  grid-area: fall_on_player;
+  background-image: url("/img/fall-on\ art.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.fall_on_player iframe{
+  position: absolute;
+  bottom: 0;
+}
+.fall_on_title { 
+  grid-area: fall_on_title; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.fall_on_title h2 { 
+ font-size: 3.2rem;
+}
+.fall_on_links {
+  grid-area: fall_on_links;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fall_on_link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 0.4rem;
+  border: 2px solid #000000;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-size: 1.4rem;
+  padding: 0.5rem 4rem;
+  transition: all 0.3s ease;
+}
+.fall_on_link:hover {
+  background-color: rgba(0, 0, 0, 0.401);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+
+@media only screen and (max-width: 830px) {
+  .top_nav {
+    width: 30%;
+  }
+  .about_us {
+    height: 50vh;
+    width: 100%;
+    top: 5%;
+  }
+
+  /*Music Button Section*/
+.music_button {
+  padding: 0 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border-top: 4px double #ffffff;
+  border-bottom: 4px double #ffffff;
+}
+.music_button a {
+  font-size: 1.6rem;
+}
+  /*Modal Pop Up*/
+  .close_modal button {
+    background-color: transparent;
+    text-decoration:none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+
+.fall_on_link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 0.4rem;
+  border: 2px solid #000000;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-size: 1.2rem;
+  padding: 0.3rem 3rem;
+  transition: all 0.3s ease;
+}
+.fall_on_link:hover {
+  background-color: rgba(0, 0, 0, 0.401);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+  /*WM LOGO*/
+  .wm_logo{
+    bottom: 2%;
+    left: -2%;
+    width: 14rem; 
+    height: 8rem;
+    filter: none;
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  .container h1 {
+    font-size: 2.5rem;
+  }
+  .music_button {
+    border-radius: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  .links {
+    width: 30px;
+    margin: 0 1rem;
+  }
+  .top_nav {
+    width: 50%;
+  }
+  .top_nav a,
+  div {
+    font-size: 1rem;
+  }
+
+  /*Music Button Section*/
+.music_button {
+  padding: 0 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border-top: 4px double #ffffff;
+  border-bottom: 4px double #ffffff;
+}
+.music_button a {
+  font-size: 1.6rem;
+}
+
+    /*Modal Pop Up*/
+    .modal_content {
+      grid-template-columns: 0.1fr 1.8fr 0.1fr; 
+      grid-template-rows: 0.2fr 0.2fr 3fr 0.5fr 0.8fr 0.3fr; 
+      gap: 1.5rem 0; 
+      grid-template-areas: 
+        "close_modal close_modal close_modal"
+        "fall_on_text fall_on_text fall_on_text"
+        ". fall_on_player ."
+        "fall_on_title fall_on_title fall_on_title"
+        "fall_on_links fall_on_links fall_on_links"
+        "fall_on_links fall_on_links fall_on_links"; 
+    }
+  .modal {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 50%;
+  }
+  
+  .close_modal button {
+    font-size: 1rem;
+  }
+  .fall_on_text{
+    font-size: 0.8rem;
+  }
+  .fall_on_text h3{
+    margin: 0 0rem;
+  }
+  
+  .fall_on_title h2 { 
+   font-size: 2.5rem;
+  }
+  .fall_on_links {
+    grid-area: fall_on_links;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .fall_on_link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 0.4rem;
+    border: 2px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
+    font-size: 1.4rem;
+    padding: 0.2rem 4rem;
+    transition: all 0.3s ease;
+  }
+  .fall_on_link:hover {
+    background-color: rgba(0, 0, 0, 0.401);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  /*WM LOGO*/
+.wm_logo{
+  bottom: 2%;
+  left: -2%;
+  width: 12rem; 
+  height: 7rem;
+  filter: none;
+}
+
+}
+
+@media only screen and (max-width: 375px) {
+  /*Modal Pop Up*/
+  .modal_content {
+    grid-template-columns: 0.1fr 1.8fr 0.1fr; 
+    grid-template-rows: 0.2fr 0.2fr 3fr 0.5fr 0.8fr 0.3fr; 
+    gap: 1.5rem 0; 
+    grid-template-areas: 
+      "close_modal close_modal close_modal"
+      "fall_on_text fall_on_text fall_on_text"
+      ". fall_on_player ."
+      "fall_on_title fall_on_title fall_on_title"
+      "fall_on_links fall_on_links fall_on_links"
+      "fall_on_links fall_on_links fall_on_links"; 
+  }
+.modal {
+  background: rgb(255, 255, 255);
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 50%;
+}
+
+.close_modal button {
+  font-size: 1rem;
+}
+.fall_on_text{
+  font-size: 0.8rem;
+}
+.fall_on_text h3{
+  margin: 0 0rem;
+}
+
+.fall_on_title h2 { 
+ font-size: 2.5rem;
+}
+
+.fall_on_link {
+  font-size: 1.4rem;
+  padding: 0.2rem 4rem;
+
+}
+
+/*Music Button Section*/
+.music_button {
+  padding: 0 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border-top: 4px double #ffffff;
+  border-bottom: 4px double #ffffff;
+}
+.music_button a {
+  font-size: 1.6rem;
+}
+
+/*WM LOGO*/
+.wm_logo{
+  bottom: 2%;
+  left: -6%;
+  width: 9rem; 
+  height: 5rem;
+  filter: none;
+}
+
+
+}
+
+
+
+@media only screen and (max-width: 360px) {
+  /*Modal Pop Up*/
+.fall_on_text{
+  font-size: 0.6rem;
+}
+}
